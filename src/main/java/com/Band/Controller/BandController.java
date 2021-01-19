@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/band")
 public class BandController {
     @Autowired
     BandService bandService;
@@ -22,7 +23,6 @@ public class BandController {
     public void saveBand(@RequestBody Band band){
         bandService.saveBand(band);
     }
-
     @GetMapping(value = "/get/{id}")
     public Optional<Band> getBand(@PathVariable Long id){
         return bandService.getBand(id);
